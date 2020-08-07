@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="css/file.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   
+   
+   <script type="text/javascript"> // logic to calculate Date
+        function AllowOrNot() {
+        var minAge = parseInt(6570); // 18 Years In Days
+        var AgeLimit = parseInt(14600); // 40 Years in Days
+
+         var x = document.getElementById("userDOB").value; //Get User Birth Date
+         var dob = new Date(x);
+         var cdate = new Date();
+      
+         var diff = cdate.getTime() - dob.getTime();  // Current DAte vs 
+        
+         var ans  =parseInt(diff /(1000*3600*24));
+         
+         if((ans < AgeLimit) && (ans > minAge)){
+          document.getElementById('btnSubmit').disabled = false;
+          document.getElementById("msg").innerHTML="You Are Eligible to Register!";
+         }
+
+         else{
+          document.getElementById('btnSubmit').disabled = true;
+          document.getElementById("msg").innerHTML="Age Limit! Sorry You are Not Eligible!";
+         }
+      };
+  </script>  
+    
+  <!-- NavBar-->
+<nav class="navbar navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+</head>
+<br><br><br><br>
+<body>
+ <div class="container">
+
+    <form  action="" method="post">
+
+        <label>Full Name: </label><br>   
+        <input type="text" placeholder="First Name" onkeypress="return (event.charCode > 64 && 
+        event.charCode < 91) || (event.charCode > 96 && event.charCode < 123 || event.charCode == 32)"  required> <br>
+
+  
+         <label>Email: </label><br>   
+        <input type="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required> <br>
+  
+        <label>Contact: </label><br>   
+        <input name="contact" type="tel" maxlength="10" placeholder="Mobile Number" pattern="[0-9]{10}"  required/> <br>
+  
+        <label >AdharCard: </label><br>  
+        <input name="addhar" type="adh" maxlength="12" placeholder="Addhar Number" pattern="[0-9]{12}" required/> <br>
+ 
+      <label >Pan Card: </label><br>   
+      <input name="Pan" type="pan" maxlength="12" placeholder="PAN Card Number"  required/> <br>
+
+     <label >Licence:</label><br>
+     <input name="licence" type="licence" maxlength="11" placeholder="Licence Number" required/>
+     <label for="st_date">DOI: </label> <input name="start_date" type="date"/> <label for="st_date">Valid Till:</label> <input name="start_date" type="date"/><br>
+     
+  
+  
+  <label>State: </label><br> 
+    <select class="form-control" id="state">
+    <option value="Maharastr">Maharatra</option>
+    <option value="Gujrat">Gujrat</option>
+    <option value="Karnataka">Karnataka</option>
+    <option value="Andhra Pradesh">Andhra Pradesh</option>
+		<option value="Arunachal Pradesh">Arunachal Pradesh</option>
+		<option value="Assam">Assam</option>
+		<option value="Bihar">Bihar</option>
+		<option value="Chandigarh">Chandigarh</option>
+		<option value="Chhattisgarh">Chhattisgarh</option>
+		<option value="Delhi">Delhi</option>
+		<option value="Goa">Goa</option>
+		<option value="Haryana">Haryana</option>
+		<option value="Himachal Pradesh">Himachal Pradesh</option>
+		<option value="Jammu and Kashmir">Jammu and Kashmir</option>
+		<option value="Jharkhand">Jharkhand</option>
+		<option value="Kerala">Kerala</option>
+		<option value="Ladakh">Ladakh</option>
+		<option value="Lakshadweep">Lakshadweep</option>
+		<option value="Madhya Pradesh">Madhya Pradesh</option>
+		<option value="Maharashtra">Maharashtra</option>
+		<option value="Manipur">Manipur</option>
+		<option value="Meghalaya">Meghalaya</option>
+		<option value="Mizoram">Mizoram</option>
+		<option value="Nagaland">Nagaland</option>
+		<option value="Odisha">Odisha</option>
+		<option value="Puducherry">Puducherry</option>
+		<option value="Punjab">Punjab</option>
+		<option value="Rajasthan">Rajasthan</option>
+		<option value="Sikkim">Sikkim</option>
+		<option value="Tamil Nadu">Tamil Nadu</option>
+		<option value="Telangana">Telangana</option>
+		<option value="Tripura">Tripura</option>
+		<option value="Uttarakhan">Uttarakhand</option>
+		<option value="Uttar Pradesh">Uttar Pradesh</option>
+		<option value="West Bengal">West Bengal</option>
+      </select>
+      <br>
+   
+
+      <label>Dist: </label><br>
+      <input type="text" name="dist"><br>
+
+      <label>City: </label><br>
+      <input type="text" name="city"><br>
+
+
+      <label >Address: </label><br>
+      <input type="text" name="address"><br>
+   <!-- if student collage name mandetory -->
+      
+   <label >DOB: </label><br>
+   <input type="date" name="dob" id="userDOB"  oninput="AllowOrNot(this)" /> <br><br>
+   <p id="msg" style="color: red;"></p>
+   <input type="submit" class="btn btn-info" value="Submit The Form" id="btnSubmit"  disabled="disabled"/>
+    <br><br>
+ </form>
+</div>
+<br><br><br><br>
+
+<footer>
+  <img src="/css/images/bg3.svg" width="100%" height="2%" alt="footer">
+</footer>
+  
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

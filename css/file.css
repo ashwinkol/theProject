@@ -1,0 +1,25 @@
+html {
+  height: 100%;
+}
+body {
+    height: 100%;
+    background-image: url("/css/images/Ellipse1.svg");
+   align-items: center;
+    background-repeat: no-repeat
+  
+}
+
+header {
+  align-content: center;
+  background-color: blue;
+  height: 20%;
+}
+
+.container {
+    height: 100%;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
